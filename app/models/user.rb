@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :events,
+             :dependent => :destroy
+
   has_many   :rsvps,
              :foreign_key => "users_id",
              :dependent => :destroy
