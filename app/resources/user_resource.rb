@@ -8,6 +8,8 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :events
+
   has_many   :rsvps,
              foreign_key: :users_id
 
