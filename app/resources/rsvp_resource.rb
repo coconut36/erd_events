@@ -8,6 +8,9 @@ class RsvpResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :user,
+             foreign_key: :users_id
+
   # Indirect associations
 
 end
