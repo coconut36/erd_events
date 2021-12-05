@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Users</dt>
       <!-- Display users_id start -->
-      <dd><%= rsvp.users_id %></dd>
+      <dd>
+        <% if @rsvp.user.present? %>
+          <%= link_to rsvp.user, rsvp.user %>
+        <% end %>
+      </dd>
       <!-- Display users_id end -->
 
       <dt>Events</dt>
       <!-- Display events_id start -->
-      <dd><%= rsvp.events_id %></dd>
+      <dd>
+        <% if @rsvp.event.present? %>
+          <%= link_to rsvp.event, rsvp.event %>
+        <% end %>
+      </dd>
       <!-- Display events_id end -->
 
       <dt>Response</dt>
