@@ -8,6 +8,9 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @comment = Comment.new
+    @event = Event.new
+    @rsvp = Rsvp.new
   end
 
   # GET /users/new
