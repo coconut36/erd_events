@@ -12,6 +12,9 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :rsvps,
+             foreign_key: :events_id
+
   belongs_to :user
 
   # Indirect associations
