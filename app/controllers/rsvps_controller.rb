@@ -3,7 +3,8 @@ class RsvpsController < ApplicationController
 
   # GET /rsvps
   def index
-    @rsvps = Rsvp.page(params[:page]).per(10)
+    @q = Rsvp.ransack(params[:q])
+    @rsvps = @q.result(:distinct => true).includes(:user, :event).page(params[:page]).per(10)
   end
 
   # GET /rsvps/1
