@@ -12,6 +12,8 @@ class EventResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :comments
+
   has_many   :rsvps,
              foreign_key: :events_id
 
