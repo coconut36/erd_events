@@ -1,6 +1,10 @@
 class Event < ApplicationRecord
   # Direct associations
 
+  has_many   :rsvps,
+             :foreign_key => "events_id",
+             :dependent => :destroy
+
   belongs_to :user
 
   # Indirect associations
