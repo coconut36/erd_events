@@ -4,11 +4,11 @@ class Event < ApplicationRecord
   # Direct associations
 
   has_many   :comments,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :rsvps,
-             :foreign_key => "events_id",
-             :dependent => :destroy
+             foreign_key: "events_id",
+             dependent: :destroy
 
   belongs_to :user
 
@@ -21,5 +21,4 @@ class Event < ApplicationRecord
   def to_s
     event_name
   end
-
 end

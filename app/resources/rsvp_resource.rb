@@ -15,5 +15,4 @@ class RsvpResource < ApplicationResource
              foreign_key: :users_id
 
   # Indirect associations
-
 end

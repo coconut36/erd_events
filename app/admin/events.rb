@@ -1,6 +1,6 @@
 ActiveAdmin.register Event do
-
- permit_params :event_name, :start_datetime, :end_datetime, :location, :details, :photo, :user_id
+  permit_params :event_name, :start_datetime, :end_datetime, :location,
+                :details, :photo, :user_id
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +14,4 @@ ActiveAdmin.register Event do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

@@ -2,14 +2,14 @@ class User < ApplicationRecord
   # Direct associations
 
   has_many   :comments,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :events,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :rsvps,
-             :foreign_key => "users_id",
-             :dependent => :destroy
+             foreign_key: "users_id",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -20,5 +20,4 @@ class User < ApplicationRecord
   def to_s
     first_name
   end
-
 end
