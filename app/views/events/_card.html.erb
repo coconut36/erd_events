@@ -6,45 +6,31 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Event name</dt>
-      <!-- Display event_name start -->
       <dd><%= event.event_name %></dd>
-      <!-- Display event_name end -->
 
       <dt>Start datetime</dt>
-      <!-- Display start_datetime start -->
       <dd><%= event.start_datetime %></dd>
-      <!-- Display start_datetime end -->
 
       <dt>End datetime</dt>
-      <!-- Display end_datetime start -->
       <dd><%= event.end_datetime %></dd>
-      <!-- Display end_datetime end -->
 
       <dt>Location</dt>
-      <!-- Display location start -->
       <dd><%= event.location %></dd>
-      <!-- Display location end -->
 
       <dt>Details</dt>
-      <!-- Display details start -->
       <dd><%= event.details %></dd>
-      <!-- Display details end -->
 
       <dt>Photo</dt>
-      <!-- Display photo start -->
       <dd>
         <%= cl_image_tag @event.photo, class: "img-fluid" %>
       </dd>
-      <!-- Display photo end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @event.user.present? %>
           <%= link_to event.user, event.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
     </dl>
 
@@ -53,21 +39,17 @@
         <%= link_to_show_or_back event, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link event start -->
       <div class="col">
         <%= link_to edit_event_url(event), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link event end -->
 
-      <!-- Delete link event start -->
       <div class="col">
         <%= link_to event, method: :delete, data: { confirm: "Do you really want to delete this event?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link event end -->
     </div>
   </div>
 

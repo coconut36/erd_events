@@ -1,69 +1,39 @@
-<!-- Form event start -->
 <%= form_with(model: @event, local: true) do |f| %>
-<!-- Form event end -->
 
-  <!-- Label and input for event_name start -->
   <div class="form-group">
     <%= f.label :event_name %>
 
-    <!-- Input for event_name start -->
     <%= f.text_field :event_name, class: "form-control" %>
-    <!-- Input for event_name end -->
   </div>
-  <!-- Label and input for event_name end -->
 
-  <!-- Label and input for start_datetime start -->
   <div class="form-group">
     <%= f.label :start_datetime %>
-    <!-- Input for start_datetime start -->
     <%= f.datetime_select :start_datetime, class: "form-control" %>
-    <!-- Input for start_datetime end -->
   </div>
-  <!-- Label and input for start_datetime end -->
 
-  <!-- Label and input for end_datetime start -->
   <div class="form-group">
     <%= f.label :end_datetime %>
-    <!-- Input for end_datetime start -->
     <%= f.datetime_select :end_datetime, class: "form-control" %>
-    <!-- Input for end_datetime end -->
   </div>
-  <!-- Label and input for end_datetime end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <%= f.label :location %>
 
-    <!-- Input for location start -->
     <%= f.text_field :location, class: "form-control" %>
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
-  <!-- Label and input for details start -->
   <div class="form-group">
     <%= f.label :details %>
-    <!-- Input for details start -->
     <%= f.text_area :details, rows: "3", class: "form-control" %>
-    <!-- Input for details end -->
   </div>
-  <!-- Label and input for details end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <%= f.label :photo %>
 
-    <!-- Input for photo start -->
     <%= f.file_field :photo, class: "form-control" %>
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for user_id start -->
   <%= f.hidden_field :user_id, value: @user.id %>
-  <!-- Input for user_id end -->
-  <!-- Label and input for user_id end -->
 
   <%= f.submit "Create event", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

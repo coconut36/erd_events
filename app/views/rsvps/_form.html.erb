@@ -1,7 +1,6 @@
 <% was_validated = rsvp.errors.any? %>
 
 <%= form_with(model: rsvp, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for users_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = rsvp.errors.include?(:user) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :users_id %>
-    <!-- Input for users_id start -->
     <%= f.collection_select :users_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for users_id end -->
     <% if user_was_invalid %>
       <% rsvp.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for users_id end -->
-  <!-- Label and input for events_id start -->
   <div class="form-group">
     <% event_class = "form-control" %>
     <% event_was_invalid = rsvp.errors.include?(:event) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :events_id %>
-    <!-- Input for events_id start -->
     <%= f.collection_select :events_id, Event.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for events_id end -->
     <% if event_was_invalid %>
       <% rsvp.errors.full_messages_for(:event).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for events_id end -->
-  <!-- Label and input for response start -->
   <div class="form-group">
     <% response_class = "form-control" %>
     <% response_was_invalid = rsvp.errors.include?(:response) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :response %>
-    <!-- Input for response start -->
     <%= f.text_field :response, class: response_class, placeholder: "Enter response" %>
-    <!-- Input for response end -->
     <% if response_was_invalid %>
       <% rsvp.errors.full_messages_for(:response).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for response end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
